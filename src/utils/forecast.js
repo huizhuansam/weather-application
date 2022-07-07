@@ -5,7 +5,7 @@ const forecast = (latitude, longitude, callback) => {
         latitude + 
         ',' + 
         longitude + 
-        '&units=f';
+        '&units=m';
 
     request({ url, json: true }, (error, { body } = {}) => {
         if (error) {
@@ -18,14 +18,16 @@ const forecast = (latitude, longitude, callback) => {
             return;
         }
 
-        const { current: { temperature, feelslike } } = body;
+        const { current: { temperature, feelslike, humidity } } = body;
 
         callback(undefined, 
             'It is currently ' + 
             temperature + 
             ' degrees out. It feels like ' + 
             feelslike + 
-            ' degrees out.');
+            ' degrees out. The humidity level is ' + 
+            humidity + 
+            '%.');
     });
 };
 
