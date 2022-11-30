@@ -1,5 +1,5 @@
 # weather-application
-A simple weather app powered by NodeJS and hosted on HerokuApp. Consumes API from mapbox.com and weatherstack.com.
+A simple weather app built with NodeJS and hosted on HerokuApp. Consumes API from mapbox.com and weatherstack.com.
 
 # Getting Started
 Clone the repository to your machine and run the following
