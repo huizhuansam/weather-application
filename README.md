@@ -1,6 +1,10 @@
 # weather-application
 A simple weather app built with NodeJS and hosted on HerokuApp. Consumes API from mapbox.com and weatherstack.com.
 
+# **NOTICE**
+As of 30 November 2022, the app has been shut down by Heroku due to their new account verification policy which requires a credit card. 
+Me being a broke ass student will consider moving to another app hosting platform, maybe GCP or AWS as long as they have a free tier.
+
 # Getting Started
 Clone the repository to your machine and run the following
 ```bash
