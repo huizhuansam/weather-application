@@ -1,4 +1,8 @@
-const request = require('request');
+import request from 'request';
+import * as dotenv from 'dotenv';
+
+dotenv.config()
+
 const weatherstackApiKey = process.env.WEATHERSTACK_API_KEY;
 
 const forecast = (latitude, longitude, callback) => {
@@ -34,4 +38,4 @@ const forecast = (latitude, longitude, callback) => {
     });
 };
 
-module.exports = forecast;
+export default forecast;

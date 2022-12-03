@@ -1,4 +1,7 @@
-const request = require('request');
+import request from 'request';
+import * as dotenv from 'dotenv';
+
+dotenv.config()
 const mapboxApiKey = process.env.MAPBOX_API_KEY;
 
 const geoCode = (address, callback) => {
@@ -7,7 +10,7 @@ const geoCode = (address, callback) => {
         '.json?access_token='+ 
         mapboxApiKey + 
         '&limit=1';
-    
+
     request({ url, json: true }, (error, { body }) => {
         if (error) {
             callback('Unable to connect to location services!', undefined);
@@ -33,4 +36,4 @@ const geoCode = (address, callback) => {
     });
 };
 
-module.exports = geoCode;
+export default geoCode;

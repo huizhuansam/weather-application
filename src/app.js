@@ -1,15 +1,18 @@
-require('dotenv').config();
-const path = require('path');
-const express = require('express');
-const hbs = require('hbs');
+import * as dotenv from 'dotenv';
+import express from 'express';
+import hbs from 'hbs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import forecast from './utils/forecast.js';
+import geoCode from './utils/geoCode.js';
 
-const geoCode = require('./utils/geoCode.js');
-const forecast = require('./utils/forecast.js');
-
+dotenv.config();
 const app = express();
 const port = process.env.PORT || 3000;
 
 // Define path for Express config
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 const publicDirectoryPath = path.join(__dirname, '../public');
 const viewPath = path.join(__dirname, '../templates/views');
 const partialsPath = path.join(__dirname, '../templates/partials');
