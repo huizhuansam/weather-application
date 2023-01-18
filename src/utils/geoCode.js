@@ -2,14 +2,13 @@ import request from 'request';
 import * as dotenv from 'dotenv';
 
 dotenv.config()
-const mapboxApiKey = process.env.MAPBOX_API_KEY;
+const maptilerApiKey = process.env.MAPTILER_API_KEY;
 
 const geoCode = (address, callback) => {
-    const url = 'https://api.mapbox.com/geocoding/v5/mapbox.places/' + 
+    const url = 'https://api.maptiler.com/geocoding/' + 
         encodeURIComponent(address) + 
-        '.json?access_token='+ 
-        mapboxApiKey + 
-        '&limit=1';
+        '.json?key=' + 
+        maptilerApiKey;
 
     request({ url, json: true }, (error, { body }) => {
         if (error) {
@@ -17,7 +16,7 @@ const geoCode = (address, callback) => {
             return;
         }
 
-        const { features } = body;    
+        const { features } = body;
 
         if (features.length < 1) {
             callback('Unable to find location. Try another search.', undefined);
