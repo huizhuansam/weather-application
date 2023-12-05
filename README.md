@@ -1,5 +1,5 @@
 # weather-application
-A simple weather app built with NodeJS and hosted on Google Cloud. Consumes API from maptiler.com and weatherstack.com.
+A simple weather app built with NodeJS and ready to be deployed. Consumes API from maptiler.com and weatherstack.com.
 
 # Getting Started
 Clone the repository to your machine and run the following
